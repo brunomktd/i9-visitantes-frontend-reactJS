@@ -54,3 +54,24 @@ export const SubmitButton = styled.button`
   align-items: center;
   flex: 1;
 `;
+
+export const Table = styled.table`
+  border: 1px solid #f39200;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+
+  ::col {
+    border: 1px solid #222;
+    text-align: inherit;
+    padding: 0.75rem;
+  }
+
+  td {
+    border: 1px solid #b66;
+    padding: 0.75rem;
+    vertical-align: top;
+  }
+`;
+
+export const List = styled.ul``;

@@ -7,8 +7,8 @@ export default function Header() {
     <Menu>
       <h1>LOGO</h1>
       <ul>
-        <li>Visitas</li>
-        <li>Relatórios</li>
+        <a href="/">Visitas</a>
+        <a href="/reports">Relatórios</a>
       </ul>
     </Menu>
   );
