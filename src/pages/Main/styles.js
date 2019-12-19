@@ -12,6 +12,8 @@ export const Container = styled.div`
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
   padding: 30px;
   margin: 80px auto;
+
+  }
 `;
 
 export const Form = styled.form`
@@ -56,22 +58,29 @@ export const SubmitButton = styled.button`
 `;
 
 export const Table = styled.table`
-  border: 1px solid #f39200;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
+  margin-top: 30px;
+  width: 100%;
+  cursor: pointer;
 
-  ::col {
-    border: 1px solid #222;
-    text-align: inherit;
-    padding: 0.75rem;
-  }
+  text-align: center;
 
+  th,
   td {
-    border: 1px solid #b66;
-    padding: 0.75rem;
-    vertical-align: top;
+    border: 1px solid #eee;
+
+    button#delete {
+      height: 30px;
+      padding: 3px;
+      border: 0;
+      background: lightcoral;
+      color: #eee;
+    }
+    button#update {
+      height: 30px;
+      padding: 3px;
+      border: 0;
+      background: #42bea5;
+      color: #eee;
+    }
   }
 `;
-
-export const List = styled.ul``;
