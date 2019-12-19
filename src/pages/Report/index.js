@@ -13,9 +13,6 @@ export default class Report extends Component {
   async componentDidMount() {
     const response = await api.get('/reports');
 
-    console.log(response.data.topVisits[0]);
-    console.log(this.state.visits);
-
     this.setState({ visits: response.data.topVisits[0] });
     this.setState({ costs: response.data.topCosts[0] });
   }
