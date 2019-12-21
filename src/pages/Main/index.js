@@ -69,6 +69,7 @@ export default class Main extends Component {
     } = this.state;
 
     if (id === '') {
+      console.log('Cadastra');
       const response = await api.post('/visits', {
         id_representative: representative,
         name,
@@ -85,26 +86,29 @@ export default class Main extends Component {
         date: '',
         cost: '',
       });
+    } else {
+      const respUpdate = await api.put(`/visits/${id}`, {
+        id,
+        id_representative: representative,
+        name,
+        address,
+        dt_visit: date,
+        cost,
+      });
+
+      this.setState({
+        visits: [
+          ...visits.filter(v => v.id !== respUpdate.data.id),
+          respUpdate.data,
+        ],
+        id: '',
+        representative: '',
+        name: '',
+        address: '',
+        date: '',
+        cost: '',
+      });
     }
-
-    const respUpdate = await api.put(`/visits/${id}`, {
-      id_representative: representative,
-      name,
-      address,
-      dt_visit: date,
-      cost,
-    });
-
-    console.log(respUpdate.data);
-
-    this.setState({
-      visits: [visits.filter(v => v !== respUpdate.data)],
-      representative: '',
-      name: '',
-      address: '',
-      date: '',
-      cost: '',
-    });
   };
 
   handleDelete = async e => {
@@ -132,13 +136,13 @@ export default class Main extends Component {
 
   render() {
     const {
+      id,
       representative,
       name,
       address,
       date,
       cost,
       visits,
-      id,
     } = this.state;
 
     return (
