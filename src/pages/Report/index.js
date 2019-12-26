@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import api from '../../services/api';
 
-import { Container, Title } from '../Main/styles';
+import Container from '../../components/Container';
+import { Title } from '../Main/styles';
 import { List } from './styles';
 
 export default class Report extends Component {

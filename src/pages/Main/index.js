@@ -2,7 +2,9 @@ import React, { Component } from 'react';
 import { parseISO, format } from 'date-fns';
 import api from '../../services/api';
 
-import { Title, Container, Form, SubmitButton, Table } from './styles';
+import Container from '../../components/Container';
+import TableVisits from '../../components/Table';
+import { Title, Form, SubmitButton } from './styles';
 
 export default class Main extends Component {
   state = {
@@ -175,7 +177,7 @@ export default class Main extends Component {
               <input
                 id="address"
                 type="text"
-                placeholder="Endereço, 24 - Barueri - SP"
+                placeholder="Rua, 313 - Cidade - UF"
                 value={address}
                 onChange={this.handleAddressChange}
               />
@@ -206,50 +208,11 @@ export default class Main extends Component {
 
         <Container>
           <Title>Tabela de Visitas</Title>
-          <Table>
-            <thead>
-              <tr>
-                <th>#</th>
-                <th>Representante</th>
-                <th>Cliente</th>
-                <th>Endereço</th>
-                <th>Data da visita</th>
-                <th>Custo</th>
-                <th>Editar</th>
-                <th>Excluir</th>
-              </tr>
-            </thead>
-            <tbody>
-              {visits.map(v => (
-                <tr key={v.id}>
-                  <td>{v.id}</td>
-                  <td>{v.representative}</td>
-                  <td>{v.name}</td>
-                  <td>{v.address}</td>
-                  <td>{v.date}</td>
-                  <td>{v.cost}</td>
-                  <td>
-                    <button
-                      id="update"
-                      onClick={() => this.handleUpdate(v)}
-                      type="button"
-                    >
-                      Editar
-                    </button>
-                  </td>
-                  <td>
-                    <button
-                      id="delete"
-                      onClick={() => this.handleDelete(v)}
-                      type="button"
-                    >
-                      Remover
-                    </button>
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </Table>
+          <TableVisits
+            visits={visits}
+            onUpdate={v => this.handleUpdate(v)}
+            onDelete={v => this.handleDelete(v)}
+          />
         </Container>
       </>
     );

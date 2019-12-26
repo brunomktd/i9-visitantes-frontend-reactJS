@@ -4,18 +4,6 @@ export const Title = styled.h1`
   color: #222;
 `;
 
-export const Container = styled.div`
-  max-width: 800px;
-  height: 100%;
-  background: #fff;
-  border-radius: 4px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-  padding: 30px;
-  margin: 80px auto;
-
-  }
-`;
-
 export const Form = styled.form`
   margin-top: 30px;
   display: flex;
@@ -57,30 +45,30 @@ export const SubmitButton = styled.button`
   flex: 1;
 `;
 
-export const Table = styled.table`
-  margin-top: 30px;
-  width: 100%;
-  cursor: pointer;
+// export const Table = styled.table`
+//   margin-top: 30px;
+//   width: 100%;
+//   cursor: pointer;
 
-  text-align: center;
+//   text-align: center;
 
-  th,
-  td {
-    border: 1px solid #eee;
+//   th,
+//   td {
+//     border: 1px solid #eee;
 
-    button#delete {
-      height: 30px;
-      padding: 3px;
-      border: 0;
-      background: lightcoral;
-      color: #eee;
-    }
-    button#update {
-      height: 30px;
-      padding: 3px;
-      border: 0;
-      background: #42bea5;
-      color: #eee;
-    }
-  }
-`;
+//     button#delete {
+//       height: 30px;
+//       padding: 3px;
+//       border: 0;
+//       background: lightcoral;
+//       color: #eee;
+//     }
+//     button#update {
+//       height: 30px;
+//       padding: 3px;
+//       border: 0;
+//       background: #42bea5;
+//       color: #eee;
+//     }
+//   }
+// `;
