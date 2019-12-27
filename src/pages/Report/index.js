@@ -7,15 +7,17 @@ import { List } from './styles';
 
 export default class Report extends Component {
   state = {
-    visits: {},
+    visits: '',
     costs: '',
   };
 
   async componentDidMount() {
     const response = await api.get('/reports');
 
-    this.setState({ visits: response.data.topVisits[0] });
-    this.setState({ costs: response.data.topCosts[0] });
+    this.setState({
+      visits: response.data.topVisits[0],
+      costs: response.data.topCosts[0],
+    });
   }
 
   render() {
@@ -25,15 +27,41 @@ export default class Report extends Component {
         <Container>
           <Title>Representante com mais visitas</Title>
           <List>
-            <li>ID = {visits.id_representative}</li>
-            <li>TOTAL DE VISITAS = {visits.count}</li>
+            <div>
+              <span className="representative">
+                <span className="representative">
+                  {visits.id_representative === undefined
+                    ? 0
+                    : visits.id_representative}
+                </span>
+              </span>
+              <span>ID</span>
+            </div>
+            <div>
+              <span className="total">
+                {visits.count === undefined ? 0 : visits.count}
+              </span>
+              <span>TOTAL DE VISITAS</span>
+            </div>
           </List>
         </Container>
         <Container>
           <Title>Representante que mais gastou</Title>
           <List>
-            <li>ID = {costs.id_representative}</li>
-            <li>CUSTO TOTAL = {costs.total}</li>
+            <div>
+              <span className="representative">
+                {costs.id_representative === undefined
+                  ? 0
+                  : costs.id_representative}
+              </span>
+              <span>ID</span>
+            </div>
+            <div>
+              <span className="total">
+                {costs.total === undefined ? `R$ 0.00` : `R$ ${costs.total}`}
+              </span>
+              <span>CUSTO TOTAL</span>
+            </div>
           </List>
         </Container>
       </>
