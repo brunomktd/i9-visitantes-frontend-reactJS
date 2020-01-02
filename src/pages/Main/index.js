@@ -209,6 +209,15 @@ export default class Main extends Component {
         <Container>
           <Title>Tabela de Visitas</Title>
           <TableVisits
+            theaders={[
+              'Representante',
+              'Cliente',
+              'Endereço',
+              'Data da visita',
+              'Custo',
+              'Editar',
+              'Excluir',
+            ]}
             visits={visits}
             onUpdate={v => this.handleUpdate(v)}
             onDelete={v => this.handleDelete(v)}
