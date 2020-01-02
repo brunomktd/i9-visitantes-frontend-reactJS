@@ -5,21 +5,21 @@ import { normalizeMoney } from '../../utils';
 
 import { Table } from './styles';
 
-export default function TableVisits({ visits, onUpdate, onDelete }) {
+export default function TableVisits({ visits, theaders, onUpdate, onDelete }) {
+  const tableHeaders = headers => {
+    return (
+      <tr>
+        <th>#</th>
+        {headers.map(h => (
+          <th key={h}>{h}</th>
+        ))}
+      </tr>
+    );
+  };
+
   return (
     <Table>
-      <thead>
-        <tr>
-          <th>#</th>
-          <th>Representante</th>
-          <th>Cliente</th>
-          <th>Endereço</th>
-          <th>Data da visita</th>
-          <th>Custo</th>
-          <th>Editar</th>
-          <th>Excluir</th>
-        </tr>
-      </thead>
+      <thead>{tableHeaders(theaders)}</thead>
       <tbody>
         {visits.map(v => (
           <tr key={v.id}>
