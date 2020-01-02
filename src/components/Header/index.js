@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import { Menu } from './styles';
 
@@ -7,8 +8,8 @@ export default function Header() {
     <Menu>
       <h1>LOGO</h1>
       <ul>
-        <a href="/">Visitas</a>
-        <a href="/reports">Relatórios</a>
+        <Link to="/">Visitas</Link>
+        <Link to="/reports">Relatórios</Link>
       </ul>
     </Menu>
   );
