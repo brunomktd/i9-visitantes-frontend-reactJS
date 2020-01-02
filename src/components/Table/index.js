@@ -1,6 +1,8 @@
 import React from 'react';
 import { parseISO, format } from 'date-fns';
 
+import { normalizeMoney } from '../../utils';
+
 import { Table } from './styles';
 
 export default function TableVisits({ visits, onUpdate, onDelete }) {
@@ -26,7 +28,7 @@ export default function TableVisits({ visits, onUpdate, onDelete }) {
             <td>{v.name}</td>
             <td>{v.address}</td>
             <td>{format(parseISO(v.date), "dd'/'MM'/'yyyy")}</td>
-            <td>{v.cost}</td>
+            <td>{normalizeMoney(v.cost)}</td>
             <td>
               <button id="update" onClick={() => onUpdate(v)} type="button">
                 Editar
