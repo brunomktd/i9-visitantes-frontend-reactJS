@@ -23,7 +23,7 @@ export const List = styled.ul`
     align-items: center;
     justify-content: center;
     font-size: 50px;
-    margin-bottom: 10px;
+    margin: 10px;
   }
 
   .total {
