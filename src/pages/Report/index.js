@@ -5,6 +5,8 @@ import Container from '../../components/Container';
 import { Title } from '../Main/styles';
 import { List } from './styles';
 
+import { normalizeMoney } from '../../utils';
+
 export default class Report extends Component {
   state = {
     visits: '',
@@ -58,7 +60,9 @@ export default class Report extends Component {
             </div>
             <div>
               <span className="total">
-                {costs.total === undefined ? `R$ 0.00` : `R$ ${costs.total}`}
+                {costs.total === undefined
+                  ? `R$ 0,00`
+                  : normalizeMoney(costs.total)}
               </span>
               <span>CUSTO TOTAL</span>
             </div>
