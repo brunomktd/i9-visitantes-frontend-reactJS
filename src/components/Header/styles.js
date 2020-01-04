@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Menu = styled.div`
-  max-height: 75px;
+  /* max-height: 75px; */
   background: #42bea5;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
   color: #fff;
@@ -10,10 +10,11 @@ export const Menu = styled.div`
   flex-direction: row;
   justify-content: space-between;
 
-  h1 {
+  img {
+    width: 80px;
+    height: auto;
     margin: 10px 50px;
-    padding: 10px;
-    border: 1px solid #fff;
+    padding: 5px;
   }
 
   ul {
