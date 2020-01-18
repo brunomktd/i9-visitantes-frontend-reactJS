@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: `https://tranquil-coast-18680.herokuapp.com`,
+  baseURL: `https://apinove.herokuapp.com/`,
 });
 
 export default api;
