@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import logo from './logo-branco.png';
+import logo from '../../assets/logo-branco.png';
 import { Menu } from './styles';
 
 export default function Header() {
